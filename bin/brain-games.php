@@ -1,2 +1,2 @@
 <?php
-echo 'Welcome to the Brain Games!';
+echo "<center>Welcome to the Brain Games!</center>";
