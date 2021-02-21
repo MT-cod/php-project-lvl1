@@ -6,5 +6,8 @@
             "email": "mammmoth@list.ru"
         }
     ],
+    "bin": [
+        "bin/brain-games"
+    ],
     "require": {}
 }
