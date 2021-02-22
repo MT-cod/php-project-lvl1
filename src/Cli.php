@@ -2,8 +2,8 @@
 
 namespace Projects\lvl1\cli;
 
-use function cli\line;
-use function cli\prompt;
+use function line;
+use function prompt;
 
 function run()
 {
