@@ -13,6 +13,6 @@ jobs:
     runs-on: debian-latest
 
     steps:
-     - name: Run Super-Linter
+     - name: Run linter
     - run: make lint
 
