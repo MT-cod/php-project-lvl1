@@ -6,11 +6,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Brain install
+        # Check-out repository under GitHub workspace
+        # https://github.com/actions/checkout
+      - uses: actions/checkout@v2
+        # Step's name
+      - name: Setup PHP
+        # Action gives to setup the PHP environment to test application
+        # https://github.com/shivammathur/setup-php
+        uses: shivammathur/setup-php@v2
+        with:
+          # Specify the PHP version
+          php-version: '8.0'
+      - name: Install
         # Install project
-        run: |
-          make install
-      - name: MT-Linter Run
+        run: make install
+      - name: Linter
         # Run Linter
-        run: |
-          make lint
+        run: make lint
+        
