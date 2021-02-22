@@ -1,18 +1,12 @@
-name: Super-Linter
-
-# Run this workflow every time a new commit pushed to your repository
-on: push
-
+name: MT-Linter
+on:
+  - push
+  - pull_request
 jobs:
-  # Set the job key. The key is displayed as the job name
-  # when a job name is not provided
-  super-lint:
-    # Name the Job
-    name: Lint code base
-    # Set the type of machine to run on
-    runs-on: debian-latest
-
+  build:
+    runs-on: ubuntu-latest
     steps:
-     - name: Run Super-Linter
-     uses: make lint
-
+      - name: MT-Linter Run
+        # Run Linter
+        run: |
+          make lint
