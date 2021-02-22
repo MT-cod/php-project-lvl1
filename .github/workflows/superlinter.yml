@@ -6,6 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Brain install
+        # Install project
+        run: |
+          make install
       - name: MT-Linter Run
         # Run Linter
         run: |
