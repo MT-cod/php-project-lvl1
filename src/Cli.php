@@ -1,9 +1,9 @@
 <?php
+//Cli
+namespace Projects\lvl1;
 
-namespace Projects\lvl1\cli;
-
-use function line;
-use function prompt;
+use function cli\line;
+use function cli\prompt;
 
 function run()
 {
