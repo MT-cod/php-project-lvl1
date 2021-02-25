@@ -16,9 +16,21 @@ use function cli\prompt;
 
 line('Welcome to the Brain Game!');
 $name = prompt('May I have your name?');
-line("Hello, %s!", $name);
-line('Answer "yes" if the number is even, otherwise answer "no".');
-$rand_num = get_rand_num();
-line("Question: %s", $rand_num);
-$answer = prompt('Your answer');
+line("Hello, $name!");
+for ($i = 0; $i < 3;) {
+    $rand_num = get_rand_num();
+    $isEvenOrNo = even_check($rand_num);
+    line('Answer "yes" if the number is even, otherwise answer "no".');
+        line("Question: %s", $rand_num);
+    $answer = prompt('Your answer');
+    if ($answer == $isEvenOrNo) {
+        line('Correct!');
+        $i++;
+    } else {
+        line("'$answer' is wrong answer ;(. Correct answer was '$isEvenOrNo'.");
+        line("Let's try again, $name!");
+    }
+    line("Congratulations, $name!");
+}
+
 

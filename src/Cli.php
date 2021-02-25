@@ -1,5 +1,5 @@
 <?php
-//Cli
+
 namespace Projects\lvl1;
 
 use function cli\line;
