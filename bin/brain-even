@@ -19,9 +19,9 @@ $name = prompt('May I have your name?');
 line("Hello, $name!");
 line('Answer "yes" if the number is even, otherwise answer "no".');
 for ($i = 0; $i < 3; $i++) {
-    $rand_num = get_rand_num();
-    $isEvenOrNo = even_check($rand_num);
-    line("Question: $rand_num");
+    $random_num = getRandNum();
+    $isEvenOrNo = checkEven($random_num);
+    line("Question: $random_num");
     $answer = prompt('Your answer');
     if ($answer !== $isEvenOrNo) {
         line("'$answer' is wrong answer ;(. Correct answer was '$isEvenOrNo'.");
