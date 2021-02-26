@@ -11,26 +11,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function cli\line;
-use function cli\prompt;
-
-line('Welcome to the Brain Game!');
-$name = prompt('May I have your name?');
-line("Hello, $name!");
-line('Answer "yes" if the number is even, otherwise answer "no".');
-for ($i = 0; $i < 3; $i++) {
-    $random_num = getRandNum();
-    $isEvenOrNo = checkEven($random_num);
-    line("Question: $random_num");
-    $answer = prompt('Your answer');
-    if ($answer !== $isEvenOrNo) {
-        line("'$answer' is wrong answer ;(. Correct answer was '$isEvenOrNo'.");
-        line("Let's try again, $name!");
-        exit;
-    }
-    line('Correct!');
-}
-line("Congratulations, $name!");
-
-
-
+runBrainEvenGame();
