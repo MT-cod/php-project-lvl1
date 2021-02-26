@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 
 //Приветствуем игрока и узнаём его имя
-function getUserNameAndGreetig(): string
+function promptUserNameAndGreetig(): string
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
@@ -29,10 +29,31 @@ function getRandNum(): int
 //Играем в "Проверка на чётность"
 function runBrainEvenGame()
 {
-    $name = getUserNameAndGreetig();
+    $name = promptUserNameAndGreetig();
     line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($i = 0; $i < 3; $i++) {
         $random_num = getRandNum();
+        $isEvenOrNo = checkEven($random_num);
+        line("Question: $random_num");
+        $answer = prompt('Your answer');
+        if ($answer !== $isEvenOrNo) {
+            line("'$answer' is wrong answer ;(. Correct answer was '$isEvenOrNo'.");
+            line("Let's try again, $name!");
+            exit;
+        }
+        line('Correct!');
+    }
+    line("Congratulations, $name!");
+}
+
+//Играем в "Калькулятор"
+function runCalculaterGame()
+{
+    $name = promptUserNameAndGreetig();
+    line('What is the result of the expression?');
+    for ($i = 0; $i < 3; $i++) {
+        $random_num1 = getRandNum();
+        $random_num2 = getRandNum();
         $isEvenOrNo = checkEven($random_num);
         line("Question: $random_num");
         $answer = prompt('Your answer');
