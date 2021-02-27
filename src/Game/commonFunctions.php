@@ -18,21 +18,21 @@ function getRandNum(): int
 }
 
 //Возвращаем случайную операцию для калькулятора
-function getRandOperationForCalc(): string
+function getRandOperationForCalc(): void
 {
     $operation_num = random_int(1, 3);
     switch ($operation_num) {
         case 1:
-            return '+';
+            return "+";
         case 2:
-            return '-';
+            return "-";
         case 3:
-            return '*';
+            return "*";
     }
 }
 
 //Возвращаем наибольший общий делитель двух чисел
-function getGcd(int $a, int $b): int
+function getGcd(int $a, int $b): void
 {
     return ($a % $b) ? getGcd($b, $a % $b) : abs($b);
 }
