@@ -30,7 +30,7 @@ function runGame(string $game_name): void
     $game_logic = 'Projects\lvl1\run_' . $game_name . '_logic';
     //Цикл-счётчик вопрос-ответ
     for ($i = 0; $i < 3; $i++) {
-        [$answer, $right_answer] = $game_logic();
+        [$answer, $right_answer] = eval('return ' . $game_logic . '();');
         if ($answer != $right_answer) {
             line("'$answer' is wrong answer ;(. Correct answer was '$right_answer'.");
             line("Let's try again, $name!");
