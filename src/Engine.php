@@ -21,6 +21,9 @@ function runGame(string $game_name): void
         case 'BrainGcd':
             line('Find the greatest common divisor of given numbers.');
             break;
+        case 'BrainProgression':
+            line('What number is missing in the progression?');
+            break;
     }
     $game_logic = 'Projects\lvl1\run_' . $game_name . '_logic';
     //Цикл-счётчик вопрос-ответ
@@ -66,6 +69,25 @@ function run_BrainGcd_logic(): array
     line("Question: $random_num1 $random_num2");
     $answer = prompt('Your answer');
     $right_answer = getGcd($random_num1, $random_num2);
+    return [$answer, $right_answer];
+}
+
+//Вопрос-ответ по логике игры "Арифметическая прогрессия". Возвращает ответ юзера и правльный ответ.
+function run_BrainProgression_logic(): array
+{
+    $random_start_num = getRandNum();
+    $random_progression_pos_num = random_int(1, 10);
+    $random_progressor_val = random_int(1, 10);
+    for ($i = 0, $progr_line = ' '; $i < 10; $i++) {
+        if ($i == $random_progression_pos_num - 1) {
+            $progr_line .= '.. ';
+        } else {
+            $progr_line .= $random_start_num + $random_progressor_val * $i . ' ';
+        }
+    }
+    line("Question: $progr_line");
+    $answer = prompt('Your answer');
+    $right_answer = $random_start_num + $random_progressor_val * ($random_progression_pos_num -1);
     return [$answer, $right_answer];
 }
 
