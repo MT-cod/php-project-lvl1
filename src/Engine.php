@@ -87,7 +87,7 @@ function run_BrainProgression_logic(): array
     }
     line("Question: $progr_line");
     $answer = prompt('Your answer');
-    $right_answer = $random_start_num + $random_progressor_val * ($random_progression_pos_num -1);
+    $right_answer = $random_start_num + $random_progressor_val * ($random_progression_pos_num - 1);
     return [$answer, $right_answer];
 }
 
