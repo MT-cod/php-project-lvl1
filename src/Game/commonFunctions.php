@@ -34,7 +34,7 @@ function getRandOperationForCalc(): string
 //Возвращаем наибольший общий делитель двух чисел
 function getGcd(int $a, int $b): mixed
 {
-    if ($a % $b == 1) {
+    if ($a % $b != 0) {
         return getGcd($b, $a % $b);
     } else {
          return abs($b);
