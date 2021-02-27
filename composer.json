@@ -19,7 +19,7 @@
     "autoload": {
         "files": [
           "src/Cli.php",
-          "Engine.php"
+          "src/Engine.php"
         ]
     },
     "require-dev": {
