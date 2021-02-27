@@ -24,8 +24,11 @@ function runGame(string $game_name): void
         case 'BrainProgression':
             line('What number is missing in the progression?');
             break;
+        case 'BrainPrime':
+            line('Answer "yes" if given number is prime. Otherwise answer "no".');
     }
     $game_logic = 'Projects\lvl1\run_' . $game_name . '_logic';
+    
     //Цикл-счётчик вопрос-ответ
     for ($i = 0; $i < 3; $i++) {
         [$answer, $right_answer] = $game_logic();
@@ -91,6 +94,16 @@ function run_BrainProgression_logic(): array
     return [$answer, $right_answer];
 }
 
+//Вопрос-ответ по логике игры "Простое ли число?". Возвращает ответ юзера и правльный ответ.
+function run_BrainPrime_logic(): array
+{
+    $random_num = getRandNum();
+    line("Question: $random_num");
+    $answer = prompt('Your answer');
+    $right_answer = isPrime($random_num);
+    return [$answer, $right_answer];
+}
+
 //Если переданное число чётное, то возвращаем'yes', иначе 'no'
 function checkEven(int $num): string
 {
@@ -121,4 +134,18 @@ function getRandOperationForCalc(): string
 function getGcd(int $a, int $b): int
 {
     return ($a % $b) ? getGcd($b, $a % $b) : abs($b);
+}
+
+//Если переданное число простое, то возвращаем'yes', иначе 'no'
+function isPrime(int $num): string
+{
+    if ($num < 2) {
+        return 'no';
+    }
+    for ($i = 2; $i <= $num / 2; $i++) {
+        if ($num % $i === 0) {
+            return 'no';
+        }
+    }
+    return 'yes';
 }
