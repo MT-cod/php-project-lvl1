@@ -18,6 +18,9 @@ function runGame(string $game_name): void
         case 'BrainCalc':
             line('What is the result of the expression?');
             break;
+        case 'BrainGcd':
+            line('Find the greatest common divisor of given numbers.');
+            break;
     }
     $game_logic = 'Projects\lvl1\run_' . $game_name . '_logic';
     //Цикл-счётчик вопрос-ответ
@@ -55,6 +58,17 @@ function run_BrainCalc_logic(): array
     return [$answer, $right_answer];
 }
 
+//Вопрос-ответ по логике игры "НОД". Возвращает ответ юзера и правльный ответ.
+function run_BrainGcd_logic(): array
+{
+    $random_num1 = getRandNum();
+    $random_num2 = getRandNum();
+    line("Question: $random_num1 $random_num2");
+    $answer = prompt('Your answer');
+    $right_answer = getGcd($random_num1, $random_num2);
+    return [$answer, $right_answer];
+}
+
 //Если переданное число чётное, то возвращаем'yes', иначе 'no'
 function checkEven(int $num): string
 {
@@ -79,4 +93,10 @@ function getRandOperationForCalc(): string
         case 3:
             return '*';
     }
+}
+
+//Возвращаем наибольший общий делитель двух чисел
+function getGcd(int $a, int $b): int
+{
+    return ($a % $b) ? getGcd($b, $a % $b) : abs($b);
 }
