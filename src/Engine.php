@@ -28,7 +28,6 @@ function runGame(string $game_name): void
             line('Answer "yes" if given number is prime. Otherwise answer "no".');
     }
     $game_logic = 'Projects\lvl1\run_' . $game_name . '_logic';
-    
     //Цикл-счётчик вопрос-ответ
     for ($i = 0; $i < 3; $i++) {
         [$answer, $right_answer] = $game_logic();
