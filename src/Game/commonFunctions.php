@@ -21,14 +21,18 @@ function getRandNum(): int
 function getRandOperationForCalc(): string
 {
     $operation_num = random_int(1, 3);
+    $operation = '';
     switch ($operation_num) {
         case 1:
-            return "+";
+            $operation = "+";
+            break;
         case 2:
-            return "-";
+            $operation = "-";
+            break;
         case 3:
-            return "*";
+            $operation = "*";
     }
+    return $operation;
 }
 
 //Возвращаем наибольший общий делитель двух чисел
