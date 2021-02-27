@@ -18,7 +18,7 @@ function getRandNum(): int
 }
 
 //Возвращаем случайную операцию для калькулятора
-function getRandOperationForCalc()
+function getRandOperationForCalc(): string
 {
     $operation_num = random_int(1, 3);
     switch ($operation_num) {
@@ -34,7 +34,7 @@ function getRandOperationForCalc()
 //Возвращаем наибольший общий делитель двух чисел
 function getGcd(int $a, int $b): mixed
 {
-    if ($a % $b) {
+    if ($a % $b == 1) {
         return getGcd($b, $a % $b);
     } else {
          return abs($b);
