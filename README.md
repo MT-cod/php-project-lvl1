@@ -5,6 +5,8 @@
 
 [![superlinter](https://github.com/MT-cod/php-project-lvl1/workflows/superlinter/badge.svg)](https://github.com/MT-cod/php-project-lvl1/actions)
 
+[![Latest Stable Version](https://img.shields.io/packagist/v/mt-cod/php-project-lvl1.svg)](https://packagist.org/packages/mt-cod/php-project-lvl1)
+
 <a href="https://asciinema.org/a/Nk6MlJc49603tFHbmAI37btJQ">brain-even asciinema</a>
 <br>
 <a href="https://asciinema.org/a/R2hYESVl7wxzUFo1C79YA6p3B">brain-calc asciinema</a>
